@@ -3,6 +3,7 @@ require 'httmultiparty'
 require 'uri'
 
 require 'askhelmut-reservix/client'
+require 'askhelmut-reservix/hash_response_wrapper'
 require 'askhelmut-reservix/version'
 
 module AskhelmutReservix
