@@ -82,8 +82,6 @@ module AskhelmutReservix
           raise ResponseError.new(response)
         elsif response.is_a?(Hash)
           HashResponseWrapper.new(response)
-        # elsif response.is_a?(Array)
-        #   ArrayResponseWrapper.new(response)
         elsif response && response.success?
           response
         end
