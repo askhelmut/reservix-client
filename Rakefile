@@ -10,3 +10,8 @@ RSpec::Core::RakeTask.new(:spec)
 
 task :test => :spec
 task :default => :spec
+
+task :release do
+  sh "gem build reservix-client.gemspec"
+  sh "gem push reservix-client*.gem"
+end
