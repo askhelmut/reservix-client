@@ -11,6 +11,7 @@ Gem::Specification.new do |spec|
   spec.homepage    = 'https://askhelmut.com'
   spec.summary     = "A wrapper for the Reservix REST api."
   spec.description = "A wrapper for the Reservix REST api. It provides simple methods to retireve resources form the Reservix REST api."
+  spec.license     = 'MIT'
 
   spec.required_rubygems_version = '>= 1.3.5'
 
