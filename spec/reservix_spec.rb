@@ -59,7 +59,7 @@ describe Reservix do
 
         it "wraps the response object in a Response" do
           stub_request(method, "https://api.reservix.de/1/sale/event/123").
-            with(:query => {:format => "json", "api-key" => "key"}, :headers => {'User-Agent'=>'ASK HELMUT Reservix API Wrapper 0.0.2'}).
+            with(:query => {:format => "json", "api-key" => "key"}, :headers => {'User-Agent'=>'ASK HELMUT Reservix API Wrapper 0.0.3'}).
             to_return(:body => '{"title": "bla"}', :headers => {:content_type => "application/json"})
           expect(subject.send(method, '/event/123')).to be_an_instance_of Reservix::HashResponseWrapper
         end
