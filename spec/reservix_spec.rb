@@ -1,13 +1,13 @@
 require "spec_helper"
 
-describe AskhelmutReservix do
+describe Reservix do
 
   it "raises ArgumentError when initialized with no options" do
-    expect{ AskhelmutReservix.new }.to raise_error(ArgumentError)
+    expect{ Reservix.new }.to raise_error(ArgumentError)
   end
 
   context 'initialized with a api_key' do
-    subject{AskhelmutReservix.new(:api_key => 'key')}
+    subject{Reservix.new(:api_key => 'key')}
 
     describe "#api_key" do
       it "returns the initialized value" do
@@ -48,12 +48,12 @@ describe AskhelmutReservix do
     [:get, :delete, :head].each do |method|
       describe "##{method}" do
         it "accepts urls as path and rewrite them" do
-          expect(AskhelmutReservix::Client).to receive(method).with('https://api.reservix.de/1/sale/event/123', { query: { format: "json", "api-key" => 'key'}})
+          expect(Reservix::Client).to receive(method).with('https://api.reservix.de/1/sale/event/123', { query: { format: "json", "api-key" => 'key'}})
           subject.send(method, "/event/123")
         end
 
         it "accepts additional query parameters" do
-          expect(AskhelmutReservix::Client).to receive(method).with('https://api.reservix.de/1/sale/event/123', {query: { limit: 2, "api-key" => 'key', format: "json"}})
+          expect(Reservix::Client).to receive(method).with('https://api.reservix.de/1/sale/event/123', {query: { limit: 2, "api-key" => 'key', format: "json"}})
           subject.send(method, '/event/123', limit: 2)
         end
 
@@ -61,7 +61,7 @@ describe AskhelmutReservix do
           stub_request(method, "https://api.reservix.de/1/sale/event/123").
             with(:query => {:format => "json", "api-key"   => "key"}, :headers => {'User-Agent'=>'ASK HELMUT Reservix API Wrapper 0.0.1'}).
             to_return(:body => '{"title": "bla"}', :headers => {:content_type => "application/json"})
-          expect(subject.send(method, '/event/123')).to be_an_instance_of AskhelmutReservix::HashResponseWrapper
+          expect(subject.send(method, '/event/123')).to be_an_instance_of Reservix::HashResponseWrapper
         end
       end
     end

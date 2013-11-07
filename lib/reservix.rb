@@ -2,11 +2,11 @@ require 'hashie'
 require 'httmultiparty'
 require 'uri'
 
-require 'askhelmut-reservix/client'
-require 'askhelmut-reservix/hash_response_wrapper'
-require 'askhelmut-reservix/version'
+require 'reservix/client'
+require 'reservix/hash_response_wrapper'
+require 'reservix/version'
 
-module AskhelmutReservix
+module Reservix
 
   def new(options={})
     Client.new(options)
@@ -25,5 +25,3 @@ module AskhelmutReservix
   module_function :respond_to_missing?
 
 end
-
-AskHelmutReservix = AskhelmutReservix

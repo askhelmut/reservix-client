@@ -1,14 +1,14 @@
 lib = File.expand_path('../lib/', __FILE__)
 $:.unshift lib unless $:.include?(lib)
-require 'askhelmut-reservix/version'
+require 'reservix/version'
 
 Gem::Specification.new do |spec|
-  spec.name        = 'askhelmut-reservix'
-  spec.version     = AskhelmutReservix::VERSION
+  spec.name        = 'reservix-client'
+  spec.version     = Reservix::VERSION
   spec.platform    = Gem::Platform::RUBY
   spec.authors     = ["Niels Hoffmann"]
   spec.email       = ["niels@askhelmut.com"]
-  spec.homepage    = 'http://askhelmut.com'
+  spec.homepage    = 'https://askhelmut.com'
   spec.summary     = "A wrapper for the Reservix REST api."
   spec.description = "A wrapper for the Reservix REST api. It provides simple methods to retireve resources form the Reservix REST api."
 

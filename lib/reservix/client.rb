@@ -1,4 +1,4 @@
-module AskhelmutReservix
+module Reservix
   class Client
     include HTTMultiParty
     USER_AGENT = "ASK HELMUT Reservix API Wrapper #{VERSION}"
@@ -97,7 +97,6 @@ module AskhelmutReservix
         path = uri.path
         scheme = use_ssl? ? "https" : "http"
         options = options.dup
-        puts options
         options[body_or_query] ||= {}
         options[body_or_query][:format] = "json"
         options[body_or_query][API_KEY_PARAM_NAME] = api_key

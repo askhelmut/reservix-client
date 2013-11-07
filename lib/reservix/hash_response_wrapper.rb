@@ -1,4 +1,4 @@
-module AskhelmutReservix
+module Reservix
   class HashResponseWrapper< Hashie::Mash
     attr_reader :response
     def initialize(response=nil, *args)

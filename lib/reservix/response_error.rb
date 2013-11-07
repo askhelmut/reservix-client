@@ -1,4 +1,4 @@
-module AskhelmutReservix
+module Reservix
   class ResponseError < HTTParty::ResponseError
     STATUS_CODES = {
       400 => "Bad Request",

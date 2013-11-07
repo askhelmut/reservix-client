@@ -1,6 +1,6 @@
 require 'simplecov'
 SimpleCov.start
-require 'askhelmut_reservix'
+require 'reservix'
 require 'webmock/rspec'
 
 RSpec.configure do |config|
